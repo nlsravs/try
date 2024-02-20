@@ -60,6 +60,7 @@
         .top-left-img {
             top: 0px;
             left: 20px;
+            animation: example 4s linear 2;
         }
 
         .bottom-right-img {
@@ -104,6 +105,18 @@
             z-index: 2; /* Ensure letters are above the circle */
         }
 
+
+
+       
+        @keyframes example {
+        0% {background-color:red; left:0px; top:0px;  width: 50px;}
+        0%{background-color:red; left:200px; top:0px; }
+        0%{background-color:red; left:200px; top:200px; }
+        75% {background-color:red; left:0px; top:200px;}
+        100% {background-color:red; left:0px; top:0px;}
+        }
+
+
         @media screen and (max-width: 768px) {
             .container {
                 flex-direction: column; /* Stack items vertically in mobile view */
@@ -119,7 +132,18 @@
                 width: 100%; /* Adjust width to fit mobile screen */
                 height: 50%; /* Set height to half of the screen height in mobile view */
             }
-        }
+
+            /* Decrease image size in mobile view */
+            .right-side img {
+                width: 36%; /* Adjust as needed */
+                height: auto;
+            }
+
+            /* Hide the circle in mobile view */
+            .big-blue-circle {
+                display: none;
+            }
+         }
     </style>
 </head>
 <body>

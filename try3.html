@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Sided Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: rgb(252, 252, 252);
+            background-color: rgb(18, 66, 138); /* Left side background color */
+        }
+
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            align-items: flex-start;
+            justify-content: space-between; /* Distribute items evenly */
+            padding: 20px;
+            color: rgb(1, 14, 20);
+            background-color: rgb(2, 21, 28); /* Right side background color */
+            position: relative; /* For absolute positioning of images */
+        }
+
+        .right-side img {
+            position: absolute;
+        }
+
+        .top-right-img {
+            top: 40px;
+            right: 80px;
+        }
+
+        .top-right1-img {
+            bottom: 630px;
+            right: 20px;
+        }
+
+        .bottom-left-img {
+            bottom: 0px;
+            left: 80px;
+        }
+
+        .top-left-img {
+            top: 0px;
+            left: 20px;
+        }
+
+        .bottom-right-img {
+            bottom: 0px;
+            right: 20px;
+        }
+
+        /* Styling for the big blue circle */
+        .big-blue-circle {
+            position: absolute;
+            width: 280px; /* Adjust the size of the circle */
+            height: 280px; /* Adjust the size of the circle */
+            background-color: rgb(18, 66, 138); /* Left side background color */
+            border-radius: 50%; /* Make it a circle */
+            top: calc(30% - 150px); /* Center vertically */
+            left: calc(0% - 150px); /* Center horizontally */
+        }
+        .bold-letters {
+            position: absolute;
+            top: 180px; /* Adjust as needed */
+            left: 680px; /* Adjust as needed */
+            font-weight: bold;
+            font-size: 24px; /* Adjust as needed */
+            z-index: 2; /* Ensure letters are above the circle */
+        }
+
+        .para-letters {
+            position: absolute;
+            top: 230px; /* Adjust as needed */
+            left: 740px; /* Adjust as needed */
+            font-weight: bold;
+            font-size: 18px; /* Adjust as needed */
+            z-index: 2; /* Ensure letters are above the circle */
+        }
+
+        .letters {
+            position: absolute;
+            bottom: 40px; /* Adjust as needed */
+            left: 40px; /* Adjust as needed */
+            font-weight: bold;
+            font-size: 18px; /* Adjust as needed */
+            z-index: 2; /* Ensure letters are above the circle */
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack items vertically in mobile view */
+            }
+
+            .right-side {
+                order: -1; /* Move right side to the top in mobile view */
+                width: 100%; /* Adjust width to fit mobile screen */
+                height: 50%; /* Set height to half of the screen height in mobile view */
+            }
+
+            .left-side {
+                width: 100%; /* Adjust width to fit mobile screen */
+                height: 50%; /* Set height to half of the screen height in mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <!-- Content for left side -->
+            <div>
+                <div class="letters">
+                    <h1>ABC 456</h1>
+                    <p> We are the best <br> Web developer company <br> in the world <br><br><br><br>View Case Study     --- >> </p>
+                </div>
+                <div class="bold-letters">UX Strategy</div>
+                <div class="para-letters">and UI design</div>
+            </div>
+        </div>
+        <div class="right-side">
+            <!-- Content for right side -->
+            <div>
+                <h2>Right Side</h2>
+            </div>
+            <!-- Top right image -->
+            <img src="ux-strategy-for-mobile-app-devlopment.png" alt="Top Right Image" class="top-right-img" width="250" height="auto">
+            <!-- Bottom left image -->
+            <img src="domi-img1.png" alt="Bottom Left Image" class="bottom-left-img"  width="280" height="auto">
+            <img src="dominos-bread.png" alt="Top Right Image" class="top-right1-img" width="100" height="auto">
+            <!-- Top left image -->
+            <img src="pizza_box.png" alt="Top Left Image" class="top-left-img" width="250" height="auto">
+            <!-- Bottom right image -->
+            <img src="dominos-bread1.png" alt="Bottom Right Image" class="bottom-right-img" width="150" height="150">
+            <!-- Big blue circle -->
+            <div class="big-blue-circle"></div>
+        </div>
+    </div>
+</body>
+</html>
